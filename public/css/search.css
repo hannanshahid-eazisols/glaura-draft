@@ -1,0 +1,175 @@
+.search-bar {
+    background: white;
+    padding: 10px;
+    border-radius: 13px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.search-inputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.input-text{
+    text-align: initial;
+    width: 100%;
+}
+.input-text h5{
+    margin: 0;
+    font-size: 15px;
+    color: #3f3f3f;
+    font-weight: 400;
+}
+.search-item:last-of-type {
+    border-right: none;
+}
+
+.search-item i {
+    color: #666;
+}
+
+.search-item input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.search-button {
+    background: #e50050;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+    margin-right: 20px;
+}
+
+.search-button:hover {
+    background: #c30044;
+}
+.flatpickr-calendar {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.datepicker-input {
+    cursor: pointer;
+    background: transparent;
+}
+
+.flatpickr-day.selected {
+    background: #6C5CE7 !important;
+    border-color: #6C5CE7 !important;
+}
+
+.flatpickr-day:hover {
+    background: #f0f0f0;
+}
+
+.flatpickr-months .flatpickr-prev-month, 
+.flatpickr-months .flatpickr-next-month {
+    padding: 5px;
+}
+
+.today-tomorrow-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.date-button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    background: #fff;
+    cursor: pointer;
+}
+
+.date-button.active {
+    background: #6C5CE7;
+    color: white;
+    border-color: #6C5CE7;
+}
+
+@media (max-width: 768px) {
+    .provider-search-bar{
+        margin-top: 50px!important;
+    }
+    /* Stack inputs */
+    .search-inputs { flex-direction: column; gap: 12px; }
+
+    /* Mobile card wraps heading, paragraph, form and button */
+    .hero .section-title {
+        margin-bottom: 15px !important;
+        background: #0000007a;
+        border: 1px solid rgb(0 0 0 / 36%);
+        border-radius: 16px;
+        padding: 16px;
+        color: #111111;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .hero .section-title h1,
+    .hero .section-title h2,
+    .hero .section-title h3,
+    .hero .section-title p { color: #ffffff !important; }
+    /* Make inner search bar transparent when inside the card */
+    .hero .section-title .search-bar { background: transparent; border: 0; box-shadow: none; margin: 12px 0; padding: 0; }
+
+    /* Each input row becomes simple field block */
+    .search-item {
+        width: 100%;
+        border: none;
+        padding: 0;
+        gap: 0;
+    }
+
+    /* Hide icons and mini headings on mobile */
+    .search-item i { display: none; }
+    .input-text h5 { display: none; }
+
+    /* Field styling */
+    .search-item .input-text { width: 100%; }
+    .search-item .input-text input {
+        width: 100%;
+        background: rgb(255 255 255);
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 12px;
+        color: #ffffff;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+    .search-item .input-text input::placeholder { color: rgba(0,0,0,0.6); }
+
+    /* Remove last divider when stacked */
+    .search-item:last-child { border-bottom: none; }
+
+    /* Full-width prominent search button */
+    .search-button {
+        width: 100%;
+        margin: 6px 0 0 0;
+        border-radius: 12px;
+        padding: 14px 16px;
+        font-weight: 700;
+        background: #9f9f9f;
+        color: #ffffff;
+    }
+
+    /* Our Services button full-width spacing when inside the card */
+    .hero .section-title .border-btn { width: 100%; justify-content: center; margin-top: 12px; }
+}
