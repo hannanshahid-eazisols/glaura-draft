@@ -34,36 +34,9 @@ class SearchController extends Controller
             ]);
         }
 
-        // Build API URL with search parameters
-        $apiUrl = 'https://us-central1-beauty-984c8.cloudfunctions.net/searchProviders';
-        $queryParams = [];
-        
-        if ($search) {
-            $queryParams['name'] = $search;
-        }
-        
-        if ($location) {
-            $queryParams['location'] = $location;
-        }
-        
-        // Build cache key based on search parameters
-        $cacheKey = 'providers_search_' . md5($search . '_' . $location);
-        
-        // Get filtered providers from API - cached for 15 minutes
-        // API already filters the data, so we use it directly without PHP filtering
-        $matchingProviders = Cache::remember($cacheKey, 900, function () use ($apiUrl, $queryParams) {
-            $response = Http::get($apiUrl, $queryParams);
-            return $response->json() ?? [];
-        });
-        
-        // Ensure it's an array
-        if (!is_array($matchingProviders)) {
-            $matchingProviders = [];
-        }
-
-        // Return the list of matching providers
+        // Providers will be fetched via JavaScript from frontend
         return view('search.provider-results', [
-            'providers' => $matchingProviders,
+            'providers' => [], // Providers loaded via JavaScript
             'search' => $search,
             'location' => $location,
             'categories' => [], // Removed: was fetching all services to extract categories
